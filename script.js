@@ -20,7 +20,10 @@ function displayArray(arr, highlightedIndices = [], currentPosition = null) {
     });
 }
 
-let delay = null;
+let delay = 100;
+document.getElementById('delayRange').addEventListener('input', function(event) {
+    delay = parseInt(event.target.value);
+});
 
 async function insertionSort(arr) {
     for (let i = 1; i < arr.length; i++) {
@@ -46,13 +49,15 @@ async function insertionSort(arr) {
 
 
 document.getElementById('sortButton').addEventListener('click', async function () {
-    delay = document.getElementById("delay").value
+    const arraySizeInput = document.getElementById('arraySize');
     var size = document.getElementById('arraySize').value;
+    arraySizeInput.disabled = true;
     var arr = new Array(parseInt(size));
     for (let i = 0; i < size; i++) {
         arr[i] = Math.floor(Math.random() * 101);
     }
     await insertionSort(arr);
+    arraySizeInput.disabled = false;
 });
 
 function sleep(ms) {
