@@ -24,26 +24,37 @@
         <div>
             <div class="flex justify-between mb-2">
                 <span class="text-sm font-medium text-gray-700">0</span>
-                <span class="text-sm font-medium text-gray-700">Delay <span id="ms"></span> (can be adjusted while sort is running)</span>
+                <span class="text-sm font-medium text-gray-700">Delay <span id="ms"></span> (can be adjusted while sort
+                    is running)</span>
                 <span class="text-sm font-medium text-gray-700">1000</span>
             </div>
             <input type="range"
                 class="w-full h-2 bg-gray-200 rounded-lg cursor-ew-resize appearance-none transition duration-300 ease-in-out hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:cursor-not-allowed"
-                id="delayRange" min="0" max="1000" value="0">
+                id="delayRange" min="0" max="1000" value="100">
         </div>
-        <button id="sortButton"
-            class="mt-4 w-full text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 mb-2 transition duration-300 ease-in-out">
-            Start Sortering
-        </button>
+        <div class="gap-4 flex">
+            <button id="sortButton"
+                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm transition duration-300 ease-in-out">
+                Start sorting Insertion
+            </button>
+            <button id="bogoButton"
+                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm transition duration-300 ease-in-out">
+                Start sorting Bogo
+            </button>
+        </div>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-4">
         <div class="text-center">
-            <span class="text-4xl font-medium text-gray-900 dark:text-white" id="time">Insertion Sort</span>
+            <span class="text-2xl font-medium text-gray-900 dark:text-white" id="time">Insertion Sort - <span
+                    id="timeInsertion"></span></span>
             <div id="arrayContainer" class="flex flex-wrap p-3 gap-2 mt-4">
             </div>
         </div>
         <div class="text-center">
-            <span class="text-4xl font-medium text-gray-900 dark:text-white">Bogo Sort</span>
+            <span class="text-2xl font-medium text-gray-900 dark:text-white">Bogo Sort (fixed 5 in size) - <span
+                    id="timeBogo"></span></span>
+            <div id="bogoArrayContainer" class="flex flex-wrap p-3 gap-2 mt-4">
+            </div>
         </div>
     </div>
 </body>
