@@ -1,6 +1,4 @@
-export let delay = 100;
 const arrayContainer = document.getElementById('arrayContainer');
-document.getElementById("ms").innerHTML = `${delay} ms`;
 export function displayArray(arr, highlightedIndices = [], currentPosition = null, sortedUpToIndex = -1) {
     arrayContainer.innerHTML = '';
     arr.forEach((value, index) => {

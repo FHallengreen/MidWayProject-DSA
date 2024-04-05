@@ -1,5 +1,5 @@
 import { bogoSort } from "./bogosort.js";
-import { insertionSort, insertionSortTime } from "./insertionsort.js";
+import { insertionSort } from "./insertionsort.js";
 
 document.getElementById("arrsize").innerHTML = arraySize.value
 document.getElementById('arraySize').addEventListener('input', function () {
@@ -7,7 +7,7 @@ document.getElementById('arraySize').addEventListener('input', function () {
 });
 
 document.getElementById('bogoButton').addEventListener('click', async function () {
-    document.getElementById("algo-name").textContent = "Bogo Sort";
+    document.getElementById("algo-name").textContent = "Bogo Sort (fixed to 5 elements) ";
     const arraySizeInput = document.getElementById('arraySize');
     var size = 5;
     arraySizeInput.disabled = true;
@@ -17,6 +17,13 @@ document.getElementById('bogoButton').addEventListener('click', async function (
     }
     await bogoSort(arr);
     arraySizeInput.disabled = false;
+});
+export let delay = 100;
+document.getElementById("ms").innerHTML = `${delay} ms`;
+
+document.getElementById('delayRange').addEventListener('input', function (event) {
+    document.getElementById("ms").innerHTML = `${delay} ms`;
+    delay = parseInt(event.target.value);
 });
 
 document.getElementById('sortButton').addEventListener('click', async function () {
@@ -28,9 +35,6 @@ document.getElementById('sortButton').addEventListener('click', async function (
     for (let i = 0; i < size; i++) {
         arr[i] = Math.floor(Math.random() * 101);
     }
-
-    var secondArr = [...arr];
-    insertionSortTime(secondArr);
     await insertionSort(arr);
     arraySizeInput.disabled = false;
 });
