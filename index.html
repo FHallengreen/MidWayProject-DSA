@@ -18,7 +18,7 @@
                 <span class="text-sm font-medium text-gray-700">100</span>
             </div>
             <input type="range"
-                class="w-full h-2 bg-gray-200 rounded-lg accent-red-500 cursor-ew-resize appearance-none transition duration-300 ease-in-out hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:cursor-not-allowed"
+                class="w-full h-2 bg-gray-200 rounded-lg accent-red-500 cursor-ew-resize appearance-none transition duration-300 ease-in-out hover:bg-gray-300 disabled:cursor-not-allowed"
                 id="arraySize" min="5" max="100" value="30">
         </div>
         <div>
@@ -29,36 +29,34 @@
                 <span class="text-sm font-medium text-gray-700">1000</span>
             </div>
             <input type="range"
-                class="w-full h-2 bg-gray-200 rounded-lg cursor-ew-resize appearance-none transition duration-300 ease-in-out hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-600 disabled:cursor-not-allowed"
+                class="w-full h-2 bg-gray-200 rounded-lg cursor-ew-resize appearance-none transition duration-300 ease-in-out hover:bg-gray-300 disabled:cursor-not-allowed"
                 id="delayRange" min="0" max="1000" value="100">
         </div>
         <div class="gap-4 flex">
             <button id="sortButton"
-                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm transition duration-300 ease-in-out">
+                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none font-medium rounded-lg text-sm transition duration-300 ease-in-out">
                 Start sorting Insertion
             </button>
             <button id="bogoButton"
-                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm transition duration-300 ease-in-out">
+                class="mt-4 w-1/2 text-white bg-blue-600 hover:bg-blue-700 h-8 focus:outline-none font-medium rounded-lg text-sm transition duration-300 ease-in-out">
                 Start sorting Bogo
             </button>
         </div>
     </div>
-    <div class="grid grid-cols-2 gap-4 mt-4">
+    <div class="pt-6">
         <div class="text-center">
-            <span class="text-2xl font-medium text-gray-900 dark:text-white" id="time">Insertion Sort - <span
-                    id="timeInsertion"></span></span>
-            <div id="arrayContainer" class="flex flex-wrap p-3 gap-2 mt-4">
+            <div id="text-box" class="text-2xl font-medium text-gray-900 dark:text-white">
+                <span id="algo-name"></span> - <span id="dynamic-text"></span>
             </div>
-        </div>
-        <div class="text-center">
-            <span class="text-2xl font-medium text-gray-900 dark:text-white">Bogo Sort (fixed 5 in size) - <span
-                    id="timeBogo"></span></span>
-            <div id="bogoArrayContainer" class="flex flex-wrap p-3 gap-2 mt-4">
+            <div id="arrayContainer" class="flex flex-wrap justify-center items-center p-3 gap-2 mt-4 w-2/3 mx-auto">
             </div>
         </div>
     </div>
 </body>
 
-<script src="script.js"></script>
+<script src="controller.js" type="module"></script>
+<script src="bogosort.js" type="module"></script>
+<script src="view.js" type="module"></script>
+<script src="insertionsort.js" type="module"></script>
 
 </html>
