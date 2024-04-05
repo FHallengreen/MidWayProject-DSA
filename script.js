@@ -20,8 +20,11 @@ function displayArray(arr, highlightedIndices = [], currentPosition = null) {
     });
 }
 
-let delay = 100;
+let delay = 0;
+document.getElementById("ms").innerHTML = `${delay} ms`;
+
 document.getElementById('delayRange').addEventListener('input', function(event) {
+    document.getElementById("ms").innerHTML = `${delay} ms`;
     delay = parseInt(event.target.value);
 });
 
@@ -47,6 +50,10 @@ async function insertionSort(arr) {
     displayArray(arr);
 }
 
+document.getElementById("arrsize").innerHTML = arraySize.value
+document.getElementById('arraySize').addEventListener('input', function() {
+    document.getElementById("arrsize").innerHTML = arraySize.value
+});
 
 document.getElementById('sortButton').addEventListener('click', async function () {
     const arraySizeInput = document.getElementById('arraySize');
