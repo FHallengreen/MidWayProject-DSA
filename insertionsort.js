@@ -1,5 +1,5 @@
-import {displayArray} from './view.js';
-import {delay } from './controller.js';
+import { displayArray } from './view.js';
+import { delay } from './controller.js';
 
 export async function insertionSort(arr) {
     let operations = 0;
@@ -9,13 +9,9 @@ export async function insertionSort(arr) {
         while (j >= 0 && arr[j] > key) {
             displayArray(arr, [j, j + 1], i);
             await new Promise(resolve => setTimeout(resolve, (delay / 2)));
-
             arr[j + 1] = arr[j];
-
             arr[j] = key;
-
             displayArray(arr, [j, j + 1], i);
-
             await new Promise(resolve => setTimeout(resolve, delay));
             j--;
             operations++;
@@ -26,3 +22,4 @@ export async function insertionSort(arr) {
     displayArray(arr);
     document.getElementById("dynamic-text").textContent = `Took ${operations} operations to finish`;
 }
+

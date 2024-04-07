@@ -7,9 +7,9 @@ document.getElementById('arraySize').addEventListener('input', function () {
 });
 
 document.getElementById('bogoButton').addEventListener('click', async function () {
-    document.getElementById("algo-name").textContent = "Bogo Sort (fixed to 5 elements) ";
+    document.getElementById("algo-name").textContent = "Bogo Sort (fixed to 7 elements) ";
     const arraySizeInput = document.getElementById('arraySize');
-    var size = 5;
+    var size = 7;
     arraySizeInput.disabled = true;
     var arr = new Array(parseInt(size));
     for (let i = 0; i < size; i++) {

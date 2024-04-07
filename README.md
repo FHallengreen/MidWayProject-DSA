@@ -1,3 +1,6 @@
+### Deployed version:
+https://sort.fhallengreen.com/
+
 # Sources
 
 ## DOM, Events and Promises
@@ -8,7 +11,7 @@
 [Measure performance](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now)<br>
 
 ## BOGO Sort
-[Fisher–Yates shuffle](https://en.wikipedia.org/wikiFisher%E2%80%93Yates_shuffle#The_modern_algorithm)<br>
+[Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)<br>
 [Bogo sort pseudo code](https://www.geeksforgeeks.org/bogosort-permutation-sort/).
 
 ## Tailwind CSS - Tailwind CSS is a CSS framework for rapidly building custom designs
