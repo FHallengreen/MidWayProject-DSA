@@ -1,5 +1,5 @@
 const arrayContainer = document.getElementById('arrayContainer');
-export function displayArray(arr, highlightedIndices = [], currentPosition = null, sortedUpToIndex = -1) {
+export function displayArray(arr, highlightedIndices = [], currentPosition = null, sortedUpToIndex = null) {
     arrayContainer.innerHTML = '';
     arr.forEach((value, index) => {
         const element = document.createElement('div');
