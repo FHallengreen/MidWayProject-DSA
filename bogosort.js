@@ -1,5 +1,5 @@
 import { displayArray } from './view.js';
-import {delay } from './controller.js';
+import { delay } from './controller.js';
 let operations = 0;
 
 async function bogoShuffle(array) {
@@ -13,12 +13,12 @@ async function bogoShuffle(array) {
 }
 
 async function isBogoSorted(array) {
-    let sortedUpToIndex = -1;
+    let sortedUpToIndex = null;
 
     for (let i = 1; i < array.length; i++) {
         displayArray(array, [], null, i - 1)
         if (array[i] < array[i - 1]) {
-            sortedUpToIndex = -1;
+            sortedUpToIndex = null;
             displayArray(array, [], null, sortedUpToIndex)
             return false;
         }
@@ -32,6 +32,7 @@ async function isBogoSorted(array) {
 
 
 export async function bogoSort(arr) {
+    operations = 0;
     let isSorted = false;
     while (!isSorted) {
         await bogoShuffle(arr);
@@ -39,3 +40,4 @@ export async function bogoSort(arr) {
     }
     document.getElementById("dynamic-text").textContent = `It took ${operations} operations to sort`;
 }
+
