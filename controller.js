@@ -6,15 +6,20 @@ document.getElementById('arraySize').addEventListener('input', function () {
     document.getElementById("arrsize").innerHTML = arraySize.value
 });
 
+function createArray(size) {
+    var arr = new Array(parseInt(size));
+    for (let i = 0; i < size; i++) {
+        arr[i] = Math.floor(Math.random() * 101);
+    }
+    return arr;
+}
+
 document.getElementById('bogoButton').addEventListener('click', async function () {
     document.getElementById("algo-name").textContent = "Bogo Sort (fixed to 7 elements) ";
     const arraySizeInput = document.getElementById('arraySize');
     var size = 7;
     arraySizeInput.disabled = true;
-    var arr = new Array(parseInt(size));
-    for (let i = 0; i < size; i++) {
-        arr[i] = Math.floor(Math.random() * 101);
-    }
+    var arr = createArray(size);
     await bogoSort(arr);
     arraySizeInput.disabled = false;
 });
@@ -31,10 +36,7 @@ document.getElementById('sortButton').addEventListener('click', async function (
     var size = document.getElementById('arraySize').value;
     document.getElementById("algo-name").textContent = "Insertion Sort";
     arraySizeInput.disabled = true;
-    var arr = new Array(parseInt(size));
-    for (let i = 0; i < size; i++) {
-        arr[i] = Math.floor(Math.random() * 101);
-    }
+    var arr = createArray(size);
     await insertionSort(arr);
     arraySizeInput.disabled = false;
 });
