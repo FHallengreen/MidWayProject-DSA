@@ -13,12 +13,12 @@ async function bogoShuffle(array) {
 }
 
 async function isBogoSorted(array) {
-    let sortedUpToIndex = null;
+    let sortedUpToIndex = -1;
 
     for (let i = 1; i < array.length; i++) {
         displayArray(array, [], null, i - 1)
         if (array[i] < array[i - 1]) {
-            sortedUpToIndex = null;
+            sortedUpToIndex = -1;
             displayArray(array, [], null, sortedUpToIndex)
             return false;
         }
